@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block page_content %}
+    {% if current_user.is_authenticated %}
+        <h1>Hello,{{ current_user.username }}.</h1>
+    {% else %}
+        <h1>Hello,World!</h1>
+    {% endif %}
+    <div>
+        {{ moment(current_time).format('LLL') }}.
+        refresh at {{ moment(current_time).fromNow(refresh=True) }}
+    </div>
+{% endblock %}

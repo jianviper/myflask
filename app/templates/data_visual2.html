@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src={{ url_for('static',filename='js/config.js') }}></script>
+    <script src={{ url_for('static',filename='js/visual.js') }}></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>动态排名数据可视化 ver1.3 By Jannchie</title>
+</head>
+<body onload="load()">
+{#<a href="{{ url_for('main.index') }}">Home</a>#}
+<center>
+    <!--<input type="file" id="inputfile" name="fileContent">-->
+    <svg width="1440" height="900" y="20"></svg>
+    <link href="{{ url_for('static', filename='css/stylesheet.css') }}" rel="stylesheet">
+</center>
+</body>
+
+</html>
