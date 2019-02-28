@@ -19,7 +19,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    HOST='0.0.0.0'
+    HOST = '0.0.0.0'
     MAIL_SERVER = 'smtp.163.com'
     MAIL_PORT = 25
     # MAIL_USE_SSL=True
@@ -28,7 +28,14 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data.db')
 
 
+class TestingConfig(Config):
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data.db')
+
+
 config = {
     'development': DevelopmentConfig,
+    'testing':TestingConfig,
+    
     'default': DevelopmentConfig
 }
